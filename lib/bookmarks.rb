@@ -15,12 +15,16 @@ class Bookmarks
   # end
 
   def all 
-    connection = PG.connect(:dbname => 'bookmark_manager')
+    connection = PG.connect(:dbname => enviroment)
 
     result = connection.exec('SELECT * FROM bookmarks;') 
 
-    result.map{ |bookmark| bookmark['url'] }
+    result.map { |bookmark| bookmark['url'] }
 
+  end
+
+  def enviroment
+    ENV['RACK_ENV'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
   end
 
 
