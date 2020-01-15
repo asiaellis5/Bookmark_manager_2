@@ -1,0 +1,2 @@
+\c bookmark_manager
+INSERT INTO bookmarks('url) VALUES ('http://www.google.com)

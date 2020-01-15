@@ -10,7 +10,7 @@ I would like to see a list of bookmarks
 ```
 
 ## Domain Model
- <img style="display: block; alt='Domain Model'" src="./image/domain_model.jpg"/>
+ <img style="display: block; alt='Domain Model'" src="./images/domain_model.jpg"/>
 
 
 ## Data Base Setup
@@ -18,6 +18,9 @@ I would like to see a list of bookmarks
 connect to psql 
 Create database using psql CREATE DATABASE bookmark_manager;
 connect to data base using \c bookmark_manager;
+create table CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(60));
+Create test database using psql CREATE DATABASE bookmark_manager_test;
+connect to database- \c bookmark_manager_test;
 create table CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(60));
 
 ## Truncate Test Database

@@ -10,17 +10,16 @@ class Bookmarks
     @bookmarks
   end
 
-  # def initialize
-  #   @bookmark_log = []
-  # end
+  def initialize
+    @bookmark_log = []
+  end
 
   def all 
     connection = PG.connect(:dbname => enviroment)
 
     result = connection.exec('SELECT * FROM bookmarks;') 
 
-    result.map { |bookmark| bookmark['url'] }
-
+    p result.map { |bookmark| bookmark['url'] }
   end
 
   def enviroment
