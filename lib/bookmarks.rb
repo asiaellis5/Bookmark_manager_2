@@ -2,8 +2,9 @@ require 'pg'
 
 class Bookmarks 
 
-  def self.create
-    @bookmarks = Bookmarks.new
+  def self.create(bookmark)
+    connection = PG.connect(:dbname => enviroment)
+    connection.exec("INSERT INTO bookmarks(url) VALUES ('#{bookmark.to_s}')")
   end
 
   def self.instance
@@ -14,15 +15,13 @@ class Bookmarks
     @bookmark_log = []
   end
 
-  def all 
+  def self.all 
     connection = PG.connect(:dbname => enviroment)
-
     result = connection.exec('SELECT * FROM bookmarks;') 
-
     result.map { |bookmark| bookmark['url'] }
   end
 
-  def enviroment
+  def self.enviroment
     ENV['RACK_ENV'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
   end
 
