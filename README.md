@@ -4,9 +4,15 @@ Commits correspond with user stories
 
 ```
 As a time-pressed user
-So that I can visit my favourite sights
+So that I can visit my favourite sites
 I would like to see a list of bookmarks
 (see image)
+```
+
+```
+As a user,
+So that I can add more of my favourite sites
+I would like to be able to add a new bookmark
 ```
 
 ## Domain Model

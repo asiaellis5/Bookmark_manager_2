@@ -11,9 +11,9 @@ class Bookmarks
     @bookmarks
   end
 
-  def initialize
-    @bookmark_log = []
-  end
+  # def initialize
+  #   @bookmark_log = []
+  # end
 
   def self.all 
     connection = PG.connect(:dbname => enviroment)
