@@ -19,7 +19,7 @@ class Bookmarks
 
     result = connection.exec('SELECT * FROM bookmarks;') 
 
-    p result.map { |bookmark| bookmark['url'] }
+    result.map { |bookmark| bookmark['url'] }
   end
 
   def enviroment
