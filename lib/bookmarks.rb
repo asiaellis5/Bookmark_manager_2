@@ -2,9 +2,17 @@ require 'pg'
 
 class Bookmarks 
 
-  def initialize
-    @bookmark_log = []
+  def self.create
+    @bookmarks = Bookmarks.new
   end
+
+  def self.instance
+    @bookmarks
+  end
+
+  # def initialize
+  #   @bookmark_log = []
+  # end
 
   def all 
     connection = PG.connect(:dbname => 'bookmark_manager')

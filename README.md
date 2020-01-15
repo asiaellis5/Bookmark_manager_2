@@ -10,8 +10,7 @@ I would like to see a list of bookmarks
 ```
 
 ## Domain Model
-
-![Bookmark Manager domain model](./images/domain_model.jpg)
+ <img style="display: block; alt='Domain Model'" src="./images/domain_model.jpg" >
 
 
 
