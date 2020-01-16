@@ -1,23 +1,19 @@
 require 'sinatra/base'
-require_relative './lib/bookmarks.rb'
+require_relative './lib/bookmark_manager.rb'
 
 class BookmarkManager < Sinatra::Base
-
-  before do
-    @bookmark = Bookmarks.instance
-  end
 
  get '/' do
    erb :index
  end
 
  post '/bookmark/add' do
-   session[:bookmark] = Bookmarks.create(params[:url])
+   Bookmark_manager.create(title: params[:title], url: params[:url])
    redirect '/bookmark'
  end
 
  get '/bookmark' do
-    @bookmark = Bookmarks.all
+    @bookmarks = Bookmark_manager.all
     erb :bookmark
  end
 
