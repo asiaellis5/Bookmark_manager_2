@@ -6,6 +6,13 @@
   <input type="hidden" name="_method" value="delete">
 </form>
 
+<form action="/bookmark/<%=bookmark.id%>" method="post">
+  <input type= "text" name= title>
+  <input type= "text" name= url>
+  <input type="submit" value="Update" id="Update<%=bookmark.title%>">Delete
+  <input type="hidden" name="_method" value="put">
+</form>
+
 </li> 
 <% end %>
 

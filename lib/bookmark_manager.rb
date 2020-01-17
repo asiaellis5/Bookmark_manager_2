@@ -19,11 +19,14 @@ class Bookmark_manager
     result = connection.exec("DELETE FROM bookmarks WHERE id = '#{id}'")
   end
 
+  def self.update(url, title, id)
+    connection = PG.connect(:dbname => enviroment)
+    result = connection.exec("UPDATE bookmarks SET url= '#{url}', title= '#{title}' WHERE id= '#{id}'")
+  end
+
   def self.instance
     @bookmarks
   end
-
- 
 
   def self.all 
     connection = PG.connect(:dbname => enviroment)
