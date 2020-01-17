@@ -11,7 +11,7 @@ describe Bookmark_manager do
 
   describe "#create" do
     it "allows a new bookmark to be created" do
-      subject.create(title: "Facebook", url: "http://www.facebook.com")
+      subject.create("Facebook", "http://www.facebook.com")
       expect(subject.all[1].url).to eq("http://www.facebook.com")
       expect(subject.all[1].title).to eq("Facebook")
     end
